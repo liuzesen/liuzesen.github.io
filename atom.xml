@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liuzesen.github.io/"/>
-  <updated>2017-02-05T08:02:49.610Z</updated>
+  <updated>2017-02-06T06:48:03.574Z</updated>
   <id>http://liuzesen.github.io/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[git]git命令备忘</title>
+    <link href="http://liuzesen.github.io/2017/02/06/git-git%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/"/>
+    <id>http://liuzesen.github.io/2017/02/06/git-git命令备忘/</id>
+    <published>2017-02-06T01:42:16.000Z</published>
+    <updated>2017-02-06T06:48:03.574Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><p><strong>查看所有分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git branch -a</div><div class="line">* develop</div><div class="line">  master</div><div class="line">  remotes/origin/HEAD -&gt; origin/master</div><div class="line">  remotes/origin/develop</div><div class="line">  remotes/origin/master</div></pre></td></tr></table></figure>
+<p>*表示的是当前使用的分支。<br>remotes开头是远程分支。</p>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p><strong>查看本地分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">* develop</div><div class="line">  master</div></pre></td></tr></table></figure>
+<p>*表示的是当前使用的分支。</p>
+</li>
+<li><p><strong>创建分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch test</div></pre></td></tr></table></figure>
+<p>test是分支的名称。</p>
+</li>
+<li><p><strong>将本地分支推到远程分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push origin test</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>切换分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git checkout master</div><div class="line">Switched to branch &apos;master&apos;</div><div class="line">Your branch is up-to-date with &apos;origin/master&apos;.</div><div class="line"></div><div class="line">$ git branch</div><div class="line">  develop</div><div class="line">* master</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>删除本地分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -d test</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>删除远程分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch -r -d origin/branch-name</div><div class="line">$ git push origin :branch-name</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push --delete origin devel</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>重命名分支名称</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -m devel develop</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>合并分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git merge test</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看origin所指的远程地址</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote -v</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;查看所有分支&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git branch -a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;* develop&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  master&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  remotes/origin/HEAD -&amp;gt; origin/master&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  remotes/origin/develop&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  remotes/origin/master&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;*表示的是当前使用的分支。&lt;br&gt;remotes开头是远程分支。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>[js]中文unicode编码</title>
