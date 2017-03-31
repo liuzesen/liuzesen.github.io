@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> [tools]chrome devtool学习（1）---网络面板 · zeson的博客</title><meta name="description" content="[tools]chrome devtool学习（1）---网络面板 - zeson"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://liuzesen.github.io/atom.xml" title="zeson的博客"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/liuzesen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">[tools]chrome devtool学习（1）---网络面板</h1><div class="post-info">2017年3月15日</div><div class="post-content"><h3 id="官方学习资料"><a href="#官方学习资料" class="headerlink" title="官方学习资料"></a>官方学习资料</h3><p><a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading" target="_blank" rel="external">https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading</a></p>
+<h3 id="面板介绍"><a href="#面板介绍" class="headerlink" title="面板介绍"></a>面板介绍</h3><p>通过<code>ctrl+alt+I</code>或者<code>F12</code>打开chrome devtool之后，点击<code>Network</code>就能看到网络面板。</p>
+<p>网络面板从上到下分为：</p>
+<h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><ul>
+<li>在<code>Filter</code>块按住 Cmd (Mac) 或 Ctrl (Windows/Linux) 并点击过滤器可以同时选择多个过滤器。</li>
+<li>在<code>Request Table</code>的表头点击右键能够添加或删除想要查看的请求信息，如cookie、method、响应头信息、timeline等。</li>
+<li>使用<code>Capture screenshoots</code>能够对请求进行截图，开启后重新刷新页面后在屏幕上就有几个时间点截图的缩略图，点击可以查看timeline的时间段，双击可以查看大图。</li>
+<li>通过按住Shift以及悬停在资源上，能够看到该资源的发起请求者（绿色背景的）以及依赖请求的资源（红色背景的）。</li>
+<li>在<code>Filger</code>中能够使用以下的过滤器：<ul>
+<li>domain。仅显示来自指定域的资源。您可以使用通配符字符 (<em>) 来包含多个域。 例如，</em>.com 将显示来自以 .com 结尾的所有域名的资源。 DevTools 会使用它遇到的所有域填充自动填充下拉菜单。</li>
+<li>has-response-header。显示包含指定 HTTP 响应标头的资源。 DevTools 会使用它遇到的所有响应标头填充自动填充下拉菜单。</li>
+<li>is。使用 is:running 可以查找 WebSocket 资源。</li>
+<li>larger-than。显示大于指定大小的资源（以字节为单位）。 将值设为 1000 等同于设置为 1k。</li>
+<li>method。显示通过指定 HTTP 方法类型检索的资源。 DevTools 会使用它遇到的所有 HTTP 方法填充下拉菜单。</li>
+<li>mime-type。显示指定 MIME 类型的资源。DevTools 会使用它遇到的所有 MIME 类型填充下拉菜单。</li>
+<li>mixed-content。显示所有混合内容资源 (mixed-content:all)，或者仅显示当前显示的资源 (mixed-content:displayed)。</li>
+<li>scheme。显示通过未保护 HTTP (scheme:http) 或受保护 HTTPS (scheme:https) 检索的资源。</li>
+<li>set-cookie-domain。显示具有 Set-Cookie 标头并带有与指定值匹配的 Domain 属性的资源。 DevTools 会使用它遇到的所有 Cookie 域填充自动填充下拉菜单。</li>
+<li>set-cookie-name。显示具有 Set-Cookie 标头并且名称与指定值匹配的资源。 DevTools 会使用它遇到的所有 Cookie 名称填充自动填充下拉菜单。</li>
+<li>set-cookie-value。显示具有 Set-Cookie 标头并且值与指定值匹配的资源。 DevTools 会使用它遇到的所有 Cookie 值填充自动填充下拉菜单。</li>
+<li>status-code。仅显示 HTTP 状态代码与指定代码匹配的资源。 DevTools 会使用它遇到的所有状态代码填充自动填充下拉菜单。</li>
+</ul>
+</li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/03/31/js-orientationchange/" class="prev">上一篇</a><a href="/2017/02/06/git-git命令备忘/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2017 <a href="http://liuzesen.github.io">zeson</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>

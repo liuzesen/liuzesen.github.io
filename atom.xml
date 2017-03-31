@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liuzesen.github.io/"/>
-  <updated>2017-02-06T06:48:03.574Z</updated>
+  <updated>2017-03-31T07:24:34.828Z</updated>
   <id>http://liuzesen.github.io/</id>
   
   <author>
@@ -16,11 +16,75 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>js-orientationchange</title>
+    <link href="http://liuzesen.github.io/2017/03/31/js-orientationchange/"/>
+    <id>http://liuzesen.github.io/2017/03/31/js-orientationchange/</id>
+    <published>2017-03-31T06:55:15.000Z</published>
+    <updated>2017-03-31T07:24:34.828Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用rem做手机适配"><a href="#使用rem做手机适配" class="headerlink" title="使用rem做手机适配"></a>使用rem做手机适配</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no,email=no,address=no"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">        (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// 使用input弹出键盘的时候，在安卓系统下会触发resize事件</span></div><div class="line">            <span class="built_in">window</span>._resizeEvent = <span class="string">'onorientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>;</div><div class="line"></div><div class="line">            <span class="keyword">var</span> docEl = <span class="built_in">document</span>.documentElement;</div><div class="line">            <span class="keyword">var</span> isHorizontal = docEl.clientWidth &gt; docEl.clientHeight;</div><div class="line"></div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">recalc</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> _w = docEl.clientWidth;</div><div class="line">                <span class="keyword">var</span> _h = docEl.clientHeight;</div><div class="line"></div><div class="line">                <span class="comment">// ios下获取宽高会延迟</span></div><div class="line">                _w = isHorizontal ? <span class="built_in">Math</span>.max(_w, _h) : <span class="built_in">Math</span>.min(_w, _h);</div><div class="line">                <span class="keyword">var</span> className = isHorizontal ? <span class="string">'horizontal'</span> : <span class="string">'vertical'</span>;</div><div class="line"></div><div class="line">                <span class="keyword">var</span> _fontSize = _w / <span class="number">375</span> * <span class="number">100</span>;</div><div class="line">                docEl.style.fontSize = _fontSize + <span class="string">'px'</span>;</div><div class="line">                docEl.className = className;</div><div class="line"></div><div class="line">                <span class="built_in">window</span>.screenInfo = &#123;</div><div class="line">                    <span class="attr">fontSize</span>: _fontSize,</div><div class="line">                    <span class="attr">isHorizontal</span>: isHorizontal,</div><div class="line">                    <span class="attr">w</span>: _w</div><div class="line">                &#125;;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="built_in">window</span>.addEventListener(<span class="built_in">window</span>._resizeEvent, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                isHorizontal = !isHorizontal;</div><div class="line">                recalc();</div><div class="line">            &#125;, <span class="literal">false</span>);</div><div class="line"></div><div class="line">            <span class="built_in">window</span>.addEventListener(<span class="built_in">window</span>._resizeEvent, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(screenInfo);</div><div class="line">            &#125;, <span class="literal">false</span>);</div><div class="line"></div><div class="line">            recalc();</div><div class="line">        &#125;)();</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">p</span> &#123;</div><div class="line">            <span class="attribute">color</span>: black;</div><div class="line">            <span class="attribute">font-size</span>: <span class="number">0.14rem</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-class">.horizontal</span> <span class="selector-tag">p</span> &#123;</div><div class="line">            <span class="attribute">color</span>: red;</div><div class="line">            <span class="attribute">font-size</span>: <span class="number">0.14rem</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="selector-class">.inputWrap</span> &#123;</div><div class="line">            <span class="attribute">position</span>: fixed;</div><div class="line">            <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">30px</span>;</div><div class="line">            <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">4px</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.inputWrap</span> <span class="selector-tag">input</span> &#123;</div><div class="line">            <span class="attribute">display</span>: block;</div><div class="line">            <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">            <span class="attribute">box-sizing</span>: border-box;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>横屏的时候我是红色的！！！而且变大了！！！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inputWrap"</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="关于orientationchange和resize的区别与测试"><a href="#关于orientationchange和resize的区别与测试" class="headerlink" title="关于orientationchange和resize的区别与测试"></a>关于orientationchange和resize的区别与测试</h3><ul>
+<li><a href="http://www.quirksmode.org/blog/archives/2013/11/orientationchan.html" target="_blank" rel="external">http://www.quirksmode.org/blog/archives/2013/11/orientationchan.html</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;使用rem做手机适配&quot;&gt;&lt;a href=&quot;#使用rem做手机适配&quot; class=&quot;headerlink&quot; title=&quot;使用rem做手机适配&quot;&gt;&lt;/a&gt;使用rem做手机适配&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[tools]chrome devtool学习（1）---网络面板</title>
+    <link href="http://liuzesen.github.io/2017/03/15/tools-chrome-devtool1/"/>
+    <id>http://liuzesen.github.io/2017/03/15/tools-chrome-devtool1/</id>
+    <published>2017-03-15T02:50:15.000Z</published>
+    <updated>2017-03-16T01:31:16.064Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="官方学习资料"><a href="#官方学习资料" class="headerlink" title="官方学习资料"></a>官方学习资料</h3><p><a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading" target="_blank" rel="external">https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading</a></p>
+<h3 id="面板介绍"><a href="#面板介绍" class="headerlink" title="面板介绍"></a>面板介绍</h3><p>通过<code>ctrl+alt+I</code>或者<code>F12</code>打开chrome devtool之后，点击<code>Network</code>就能看到网络面板。</p>
+<p>网络面板从上到下分为：</p>
+<h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><ul>
+<li>在<code>Filter</code>块按住 Cmd (Mac) 或 Ctrl (Windows/Linux) 并点击过滤器可以同时选择多个过滤器。</li>
+<li>在<code>Request Table</code>的表头点击右键能够添加或删除想要查看的请求信息，如cookie、method、响应头信息、timeline等。</li>
+<li>使用<code>Capture screenshoots</code>能够对请求进行截图，开启后重新刷新页面后在屏幕上就有几个时间点截图的缩略图，点击可以查看timeline的时间段，双击可以查看大图。</li>
+<li>通过按住Shift以及悬停在资源上，能够看到该资源的发起请求者（绿色背景的）以及依赖请求的资源（红色背景的）。</li>
+<li>在<code>Filger</code>中能够使用以下的过滤器：<ul>
+<li>domain。仅显示来自指定域的资源。您可以使用通配符字符 (<em>) 来包含多个域。 例如，</em>.com 将显示来自以 .com 结尾的所有域名的资源。 DevTools 会使用它遇到的所有域填充自动填充下拉菜单。</li>
+<li>has-response-header。显示包含指定 HTTP 响应标头的资源。 DevTools 会使用它遇到的所有响应标头填充自动填充下拉菜单。</li>
+<li>is。使用 is:running 可以查找 WebSocket 资源。</li>
+<li>larger-than。显示大于指定大小的资源（以字节为单位）。 将值设为 1000 等同于设置为 1k。</li>
+<li>method。显示通过指定 HTTP 方法类型检索的资源。 DevTools 会使用它遇到的所有 HTTP 方法填充下拉菜单。</li>
+<li>mime-type。显示指定 MIME 类型的资源。DevTools 会使用它遇到的所有 MIME 类型填充下拉菜单。</li>
+<li>mixed-content。显示所有混合内容资源 (mixed-content:all)，或者仅显示当前显示的资源 (mixed-content:displayed)。</li>
+<li>scheme。显示通过未保护 HTTP (scheme:http) 或受保护 HTTPS (scheme:https) 检索的资源。</li>
+<li>set-cookie-domain。显示具有 Set-Cookie 标头并带有与指定值匹配的 Domain 属性的资源。 DevTools 会使用它遇到的所有 Cookie 域填充自动填充下拉菜单。</li>
+<li>set-cookie-name。显示具有 Set-Cookie 标头并且名称与指定值匹配的资源。 DevTools 会使用它遇到的所有 Cookie 名称填充自动填充下拉菜单。</li>
+<li>set-cookie-value。显示具有 Set-Cookie 标头并且值与指定值匹配的资源。 DevTools 会使用它遇到的所有 Cookie 值填充自动填充下拉菜单。</li>
+<li>status-code。仅显示 HTTP 状态代码与指定代码匹配的资源。 DevTools 会使用它遇到的所有状态代码填充自动填充下拉菜单。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;官方学习资料&quot;&gt;&lt;a href=&quot;#官方学习资料&quot; class=&quot;headerlink&quot; title=&quot;官方学习资料&quot;&gt;&lt;/a&gt;官方学习资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/tools/chrom
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[git]git命令备忘</title>
     <link href="http://liuzesen.github.io/2017/02/06/git-git%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/"/>
     <id>http://liuzesen.github.io/2017/02/06/git-git命令备忘/</id>
     <published>2017-02-06T01:42:16.000Z</published>
-    <updated>2017-02-06T06:48:03.574Z</updated>
+    <updated>2017-03-23T02:27:05.436Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><p><strong>查看所有分支</strong></p>
@@ -59,7 +123,22 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git merge test</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>查看origin所指的远程地址</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote -v</div></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote -v</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>让git记住密码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config credential.helper store</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>更新所有远程分支</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote update -p</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git fetch --all</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>git如何针对某个url设置代理</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">打开C:\Users\用户名，可以看到.gitconfig</div><div class="line"></div><div class="line">加入以下代码：</div><div class="line">[http]</div><div class="line">  proxy = http://http-proxy.com:8080</div><div class="line">[http &quot;http://not-http-proxy.com/&quot;]</div><div class="line">  proxy =</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>回退版本</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 查看提交记录</div><div class="line">$ git log -3</div><div class="line"></div><div class="line"># 根据commit的md5回退</div><div class="line">$ git reset --hard xxxxxxxxxxxxxxxxxxxxx</div></pre></td></tr></table></figure>
+</li>
 </ul>
 ]]></content>
     
